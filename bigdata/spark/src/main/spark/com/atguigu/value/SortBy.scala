@@ -11,7 +11,7 @@ object SortBy {
 
     val rdd: RDD[Int] = sc.makeRDD(List(5, 2, 4, 3, 1, 6), 2)
 
-    val unit: RDD[Int] = rdd.sortBy(num => num, false)
+    val unit: RDD[Int] = rdd.sortBy((num: Int) => num, ascending = false)
 
     unit.collect.foreach(println)
 

@@ -15,7 +15,7 @@ object SparkSQL02_RDDToDataFrame {
     val lineRDD: RDD[String] = sc.textFile("D:\\java\\learn\\IntelljIdea\\bigdata\\sparkSQL\\input\\user.txt")
 
     //将读取到的数据切割
-    val rdd: RDD[(String, Long)] = lineRDD.map(line => {
+    val rdd: RDD[(String, Long)] = lineRDD.map((line: String) => {
       val datas: Array[String] = line.split(",")
       (datas(0), datas(1).toLong)
     })
